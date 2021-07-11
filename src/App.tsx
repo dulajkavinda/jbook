@@ -36,12 +36,19 @@ function App() {
     });
 
     setCode(result.outputFiles[0].text);
+
+    try {
+      eval(result.outputFiles[0].text);
+    } catch (error) {
+      alert(error);
+    }
   };
 
   return (
     <div>
       <textarea
         value={input}
+        style={{ width: 400, height: 300 }}
         onChange={(e) => setInput(e.target.value)}
       ></textarea>
       <div>

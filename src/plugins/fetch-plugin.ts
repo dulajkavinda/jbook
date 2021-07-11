@@ -6,12 +6,6 @@ const fileCache = localforage.createInstance({
     name: 'filecache'
 });
 
-(async () => {
-    await fileCache.setItem('color', 'red')
-    const color = await fileCache.getItem('color')
-}
-)()
-
 export const fetchPlugin = (inputCode: string) => {
     return {
         name: 'fetch_plugin',
